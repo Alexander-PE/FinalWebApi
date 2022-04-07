@@ -38,6 +38,19 @@ def CargarPeliculas():
         tp.append(p)
     return tp    
 
+def CargarPeliculasId():
+    tp = t_Peliculas().get(t_Peliculas.id == p.id)
+    tp.Nombre = p.Nombre
+    tp.Fecha = p.Fecha
+    tp.Comentario = p.Comentario
+    tp.Actores = p.Actores
+    tp.Trailer = p.Trailer
+    tp.Imagen = p.Imagen
+    
+    return tp    
+
+
+
 def ActualizarPeliculas(p:Peliculas):
     tp = t_Peliculas().get(t_Peliculas.id == p.id)
     tp.Nombre = p.Nombre
