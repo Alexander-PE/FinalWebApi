@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from typing import Optional
 from pydantic import BaseModel
 from modelo import  *
-import Database as bd
+import database as bd
 from fastapi.middleware.cors import CORSMiddleware
 
 
