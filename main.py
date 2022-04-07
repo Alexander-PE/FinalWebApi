@@ -35,8 +35,8 @@ def Agregar(P:Peliculas):
 @app.get("/Peliculas/Lista",tags=['Peliculas'])
 
 def Lista_de_Peliculas():
-    Pelicula = bd.CargarPeliculasId()
-    return Pelicula
+    Peliculas = bd.CargarPeliculasId()
+    return Peliculas
 
 
 @app.put("/Peliculas/Actualizar",tags=['Peliculas'])
@@ -51,8 +51,10 @@ def Eliminar(P:Peliculas):
     bd.EliminarPeliculas(P)
     return  {"Mensaje":"La película fue eliminada."}
 
+
+
 @app.get("/Peliculas/Lista/{ID}",tags=['Peliculas'])
 
-def leerItem(ID:int):
-    Peliculas = bd.CargarPeliculas()
-    return Peliculas
+def leerItem(P:Peliculas):
+    Pelicula = bd.CargarPeliculasId(P)
+    return Pelicula
