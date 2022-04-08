@@ -7,6 +7,7 @@ class t_Peliculas(Model):
     Nombre = TextField()
     Fecha = TextField()
     Comentario = TextField()
+    Director = TextField()
     Actores = TextField()
     Trailer = TextField()
     Imagen = TextField()
@@ -25,6 +26,7 @@ def GuardarPeliculas(p:Peliculas):
     tp.Nombre = p.Nombre
     tp.Fecha = p.Fecha
     tp.Comentario = p.Comentario
+    tp.Director = p.Director
     tp.Actores = p.Actores
     tp.Trailer = p.Trailer
     tp.Imagen = p.Imagen
@@ -36,19 +38,7 @@ def CargarPeliculas():
 
     for p in t_Peliculas.select().dicts():
         tp.append(p)
-    return tp    
-
-def CargarPeliculasId():
-    tp = t_Peliculas().get(t_Peliculas.id == p.id)
-    tp.Nombre = p.Nombre
-    tp.Fecha = p.Fecha
-    tp.Comentario = p.Comentario
-    tp.Actores = p.Actores
-    tp.Trailer = p.Trailer
-    tp.Imagen = p.Imagen
-    
-    return tp    
-
+    return tp
 
 
 def ActualizarPeliculas(p:Peliculas):
@@ -56,6 +46,7 @@ def ActualizarPeliculas(p:Peliculas):
     tp.Nombre = p.Nombre
     tp.Fecha = p.Fecha
     tp.Comentario = p.Comentario
+    tp.Director = p.Director
     tp.Actores = p.Actores
     tp.Trailer = p.Trailer
     tp.Imagen = p.Imagen
